@@ -6,7 +6,7 @@ Mathys Boesiger
 
 | tache          | temps estime | temps passe | commentaire                   |
 | --------------- | ------------ | ----------- | ----------------------------- |
-| javascrip       | 30 min       | 30 min      | j'avais déjà fait un peu de javascript     |
-| vue.js          | 1h           | 2h          | je comprenais pas tout, j'ai beaucoup regarder les solutions                              |
-| bonus           | 1h           | ...            | je fait le début, après je comprenais plus rien                              |
+| creation du projet      | 30 min       | 1h      | j'ai pris plus de temps car je voulais comprendre les copier-coller que je faisait     |
+| vue.js          | 1h           | 2h          |                               |
+| bonus           | 1h           | ...            |                              |
 | total           | 2h30            |  2h30           |                               |
