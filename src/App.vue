@@ -6,7 +6,13 @@ import { RouterLink, RouterView } from 'vue-router'
   <nav class="navbar navbar-expand-lg bg-body-tertiary">
     <div class="container-fluid">
       <RouterLink class="navbar-brand" to="/">
-        <i class="bi bi-question-square"></i>
+        <img
+          src="/Users/mathys/Desktop/hep/bs21inf5/sem07-project-MathysBoesigerP58887/src/quiz.jpeg"
+          alt="quiz"
+          width="24"
+          height="24"
+          class="d-inline-block.align-text-top"
+        />
         Quiz
       </RouterLink>
       <button
