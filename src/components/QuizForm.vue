@@ -6,9 +6,15 @@ const chat = ref<string | null>(null)
 const capitale = ref<string | null>(null)
 const filled = computed<boolean>(() => cheval.value && chat.value && capitale.value !== null)
 
+function reset() {
+  cheval.value = null
+  chat.value = null
+  capitale.value = null
+}
+
 function submit(event: Event): void {
   let score = 0
-  let maxscore = 3
+  const max_score = 3
   event.preventDefault()
   if (cheval.value === 'blanc') {
     score += 1
@@ -19,7 +25,7 @@ function submit(event: Event): void {
   if (capitale.value === 'berne') {
     score += 1
   }
-  if (score === maxscore) {
+  if (score === max_score) {
     alert('Vous avez tout juste !')
   } else {
     alert(`Vous avez ${score}/3`)
@@ -170,4 +176,5 @@ function submit(event: Event): void {
     </div>
     <button class="btn btn-primary" :class="{ disabled: !filled }" type="submit">Terminer</button>
   </form>
+  <button class="btn btn-secondary" @click="reset">Réinitialiser</button>
 </template>
