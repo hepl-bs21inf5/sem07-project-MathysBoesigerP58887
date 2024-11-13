@@ -1,21 +1,30 @@
 <script setup lang="ts">
 import { computed, ref } from 'vue'
 
-const cheval = ref<string | null>(null)
+// Déclaration des variables réactives qui vont contenir les réponses de l'utilisateur
+const cheval = ref<string | null>(null) // null signifie qu'il n'y a pas de réponse au départ
 const chat = ref<string | null>(null)
 const capitale = ref<string | null>(null)
+
+// Vérifie si toutes les réponses sont remplies
 const filled = computed<boolean>(() => cheval.value && chat.value && capitale.value !== null)
 
-function reset() {
+//Réinitialise les réponses à null
+function reset(event: Event): void {
+  event.preventDefault()
+
   cheval.value = null
   chat.value = null
   capitale.value = null
 }
 
+// Fonction de soumission du formulaire qui calcule le score de l'utilisateur et affiche le score
 function submit(event: Event): void {
+  event.preventDefault() // Empêche la soumission du formulaire et le rafraîchissement de la page
+
   let score = 0
   const max_score = 3
-  event.preventDefault()
+
   if (cheval.value === 'blanc') {
     score += 1
   }
@@ -33,8 +42,9 @@ function submit(event: Event): void {
 }
 </script>
 
+<!-- Formulaire des questions -->
 <template>
-  <form @submit="submit">
+  <form @submit="submit"> <!-- Quand on appuie sur "Terminer", l'événement submit est émis -->
     De quelle couleur est le cheval blanc de Napoléon ?
     <div class="form-check">
       <input
@@ -174,7 +184,9 @@ function submit(event: Event): void {
       />
       <label class="form-check-label" for="bale">Bâle</label>
     </div>
+    <!-- Bouton de soumission qui est désactivé tant que toutes les réponses ne sont pas remplies -->
     <button class="btn btn-primary" :class="{ disabled: !filled }" type="submit">Terminer</button>
   </form>
+  <!-- Bouton pour réinitialiser les réponses -->
   <button class="btn btn-secondary" @click="reset">Réinitialiser</button>
 </template>

@@ -1,5 +1,7 @@
 <script setup lang="ts">
-  import QuizForm from "@/components/QuizForm.vue";
+// Importation du composant QuizForm
+// Il sera utilisé dans la page pour afficher le formulaire de quiz
+import QuizForm from '@/components/QuizForm.vue'
 </script>
 
 <template>

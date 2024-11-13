@@ -1,14 +1,19 @@
 <script setup lang="ts">
+// - RouterLink : permet de créer des liens de navigation vers différentes routes
+// - RouterView : permet de rendre le composant associé à la route active
 import { RouterLink, RouterView } from 'vue-router'
 </script>
 
 <template>
+  <!-- Barre de navigation principale -->
   <nav class="navbar navbar-expand-lg bg-body-tertiary">
     <div class="container-fluid">
       <RouterLink class="navbar-brand" to="/">
         <i class="bi bi-card-list"></i>
         Quiz
       </RouterLink>
+
+      <!-- Bouton de menu pour les petits écrans -->
       <button
         class="navbar-toggler"
         type="button"
@@ -20,6 +25,8 @@ import { RouterLink, RouterView } from 'vue-router'
       >
         <span class="navbar-toggler-icon"></span>
       </button>
+
+      <!-- Section de la barre de navigation qui se cache sur les petits écrans -->
       <div id="navbar" class="collapse navbar-collapse">
         <ul class="navbar-nav">
           <li class="nav-item">
