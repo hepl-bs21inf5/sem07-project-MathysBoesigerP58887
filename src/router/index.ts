@@ -25,6 +25,12 @@ const router = createRouter({
       // Le composant sera chargé uniquement lorsque l'utilisateur accède à la route
       component: () => import('../views/AboutView.vue'),
     },
+    {
+      //Route pour la page "Trivia"
+      path: '/trivia',
+      name: 'trivia',
+      component: () => import('../views/TriviaView.vue'),
+    },
   ],
 })
 

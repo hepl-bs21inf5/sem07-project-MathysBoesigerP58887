@@ -24,6 +24,8 @@ Mathys Boesiger
 | HomeView.vue                             | C'est la page 1 du quiz, elle fait appel au fichier Quizformvue                                                                                                                                 |
 | QuizForm.vue                             | C'est la qu'il y a toute les questions du quiz ainsi que le code de comptage de point                                                                                                           |
 
+&nbsp;
+
 | Dans le fichier QuizForm.vue :                                          |                                                                                                                                                                                                                                                                                         |
 | ----------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Quelles sont les similarités et les différences entre ref et computed ? | Les deux sont réactifs et utilise la "value" pour accéder à leur valeur. ref est utilisé pour gérer des valeurs modifiables, tandis que computed est idéal pour gérer des valeurs dérivées qui dépendent de d'autres valeurs réactives.                                                 |
@@ -41,14 +43,14 @@ mes difficukltés
 | ------------- | ------------ | ----------- | ---------------------------------------------------------------- |
 | QuestionRadio | 30 min       | 30 min      |                                                                  |
 | QuestionText  | 30 min       | 1h          | il m'a fallut du temps pour comprendre ce que faisait le fichier |
-|               |              |             |                                                                  |
-| total         |              |             |                                                                  |
+| API           | 1h30         |             | 1h pour l'instant                                                |
+| total         | 2h30         |             |                                                                  |
 
 ### Explications et réflexions
 
 Quelle est la différence entre un prop et un modèle (v-model) ?
 
-- 
+-
 
 Comment rendre la propriété placeholder optionnelle ?
 
