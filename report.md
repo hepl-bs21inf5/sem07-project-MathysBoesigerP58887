@@ -49,7 +49,7 @@ Ma principale difficulté a été de comprendre ce que tous les fichiers faisait
 
 ### Pour aller plus loin
 
-pour l'instant je n'ai pas vraiment d'idée mais j'aimerais bien ajouté une page qui me permet d'ajouté des questions et les réponses directement sur le site.
+Pour l'instant je n'ai pas vraiment d'idée mais j'aimerais bien ajouté une page qui me permet d'ajouté des questions et les réponses directement sur le site.
 
 &nbsp;
 
@@ -67,7 +67,7 @@ pour l'instant je n'ai pas vraiment d'idée mais j'aimerais bien ajouté une pag
 
 A quoi sert l'API ?
 
-- Elle Récupère des données d'un serveur, ici des questions, et les ajoute comme banque de donnée à notre site afin de construire le quiz avant les questions, les différents choix de réponse et la réponse correcte.
+- Elle Récupère des données d'un serveur, ici des questions, et les ajoute comme banque de donnée à notre site afin de construire le quiz avec les questions, les différents choix de réponse et la réponse correcte.
 
 Quelle est la différence entre un prop et un modèle (v-model) ?
 
@@ -81,9 +81,13 @@ Comment rendre la propriété placeholder optionnelle ?
 
 ### Difficultés
 
+J'avais du mal à comprendre le nouveau fichier QuestionRadio.
+
 &nbsp;
 
 ### Pour aller plus loin
+
+J'aimerai bien modifier les boutons des radios avec d'autres styles
 
 &nbsp;
 

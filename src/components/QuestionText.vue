@@ -3,9 +3,10 @@ import { defineModel, defineProps } from 'vue'
 
 const model = defineModel<string | null>()
 const props = defineProps({
+  // Propriété optionnelle `placeholder` pour définir un texte par défaut dans le champ de saisie
   placeholder: {
     type: String,
-    default: 'Veuillez entrer un nombre',
+    default: 'Veuillez entrer un nombre', // Valeur par défaut si aucune valeur n'est fournie
   },
 })
 </script>
@@ -18,4 +19,5 @@ const props = defineProps({
     class="form-control"
     :placeholder="props.placeholder"
   />
+  <!-- Texte indicatif dans le champ, configurable via la prop placeholder -->
 </template>

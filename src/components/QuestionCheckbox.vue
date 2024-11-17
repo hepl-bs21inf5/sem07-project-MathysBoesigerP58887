@@ -1,3 +1,4 @@
+<!-- A presque les même propriétés que QuestionRadio.vue -->
 <script setup lang="ts">
 import { defineModel, defineProps, type PropType } from 'vue'
 
