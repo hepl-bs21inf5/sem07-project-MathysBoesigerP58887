@@ -106,7 +106,7 @@ function submit(event: Event): void {
     />
   </form>
   <form @submit="submit">
-    <QuestionText v-model="reponse_chat" text="Combien de pattes a un chat ?" />
+    <QuestionText id="pattes" v-model="reponse_chat" text="Combien de pattes a un chat ?" />
   </form>
   <form @submit="submit">
     <QuestionCheckbox

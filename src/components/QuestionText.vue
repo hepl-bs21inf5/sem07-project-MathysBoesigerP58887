@@ -3,6 +3,8 @@ import { defineModel, defineProps } from 'vue'
 
 const model = defineModel<string | null>()
 const props = defineProps({
+  id: { type: String, required: true },
+  text: { type: String, required: true },
   // Propriété optionnelle `placeholder` pour définir un texte par défaut dans le champ de saisie
   placeholder: {
     type: String,
@@ -12,12 +14,8 @@ const props = defineProps({
 </script>
 
 <template>
-  <label for="exampleFormControlInput" class="form-label"> Combien de pattes a un chat ? </label>
-  <input
-    id="exampleFormControlInput"
-    v-model="model"
-    class="form-control"
-    :placeholder="props.placeholder"
-  />
+  {{ props.text }}
+  <label for="exampleFormControlInput" class="form-label"></label>
+  <input id="props.id" v-model="model" class="form-control" :placeholder="props.placeholder" />
   <!-- Texte indicatif dans le champ, configurable via la prop placeholder -->
 </template>
