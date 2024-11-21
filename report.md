@@ -55,6 +55,8 @@ Pour l'instant je n'ai pas vraiment d'idée mais j'aimerais bien ajouté une pag
 
 ## Semaine 2
 
+### Tâche et temps
+
 | tâche         | temps estimé | temps passé | commentaires                                                                        |
 | ------------- | ------------ | ----------- | ----------------------------------------------------------------------------------- |
 | QuestionRadio | 30 min       | 30 min      | C'est du copier-coller, ensuite il fallait juste comprendre le code                 |
@@ -93,45 +95,136 @@ J'aimerai bien modifier les boutons des radios avec d'autres styles
 
 ## Semaine 3
 
-| tâche | temps estimé | temps passé | commentaires |
-| ----- | ------------ | ----------- | ------------ |
-|       |              |             |              |
-|       |              |             |              |
-|       |              |             |              |
-| total |              |             |              |
+### Tâche et temps
+
+| tâche   | temps estimé | temps passé | commentaires |
+| ------- | ------------ | ----------- | ------------ |
+| réponse | 1h           | 30 min      |              |
+| score   | 1h           | 30 min      |              |
+| total   | 2h           | 1h          |              |
+
+&nbsp;
+
+### Explications et réflexions
+
+À quoi sert l'option immediate: true dans le watch ? Que se passe-t-il si on l'enlève ou si on met immediate: false ?
+
+- Si on met false ça nous affiche une liste vide et dès qu'on remplis une réponse, ça remplit la liste avec true ou false.
+
+Proposer une autre manière de calculer le score et comparer les deux méthodes.
+
+- On pourrait parcourir la liste des réponses et à chaque fois fois qu'on a "true", on ajoute 1 au score. Cette méthode me parrait plus longue car à chaque fois qu'on change la valeur, on va de nouveau parcourir la liste et on devra vérifié qu'on a pas déjà ajouté la valeur.
+
+&nbsp;
+
+### Difficultés
+
+Aucunes difficultés cette semaine. OUF
+
+&nbsp;
+
+### Pour aller plus loin
+
+les boutons me gène mais on me dis qu'on verra ça la semaine prochaine
+
+&nbsp;
 
 ## Semaine 4
 
-| tâche | temps estimé | temps passé | commentaires |
-| ----- | ------------ | ----------- | ------------ |
-|       |              |             |              |
-|       |              |             |              |
-|       |              |             |              |
-| total |              |             |              |
+### Tâche et temps
+
+| tâche   | temps estimé | temps passé | commentaires |
+| ------- | ------------ | ----------- | ------------ |
+| réponse |              |             |              |
+| score   |              |             |              |
+|         |              |             |              |
+| total   |              |             |              |
+
+&nbsp;
+
+### Explications et réflexions
+
+&nbsp;
+
+### Difficultés
+
+&nbsp;
+
+### Pour aller plus loin
+
+&nbsp;
 
 ## Semaine 5
 
-| tâche | temps estimé | temps passé | commentaires |
-| ----- | ------------ | ----------- | ------------ |
-|       |              |             |              |
-|       |              |             |              |
-|       |              |             |              |
-| total |              |             |              |
+### Tâche et temps
+
+| tâche   | temps estimé | temps passé | commentaires |
+| ------- | ------------ | ----------- | ------------ |
+| réponse |              |             |              |
+| score   |              |             |              |
+|         |              |             |              |
+| total   |              |             |              |
+
+&nbsp;
+
+### Explications et réflexions
+
+&nbsp;
+
+### Difficultés
+
+&nbsp;
+
+### Pour aller plus loin
+
+&nbsp;
 
 ## Semaine 6
 
-| tâche | temps estimé | temps passé | commentaires |
-| ----- | ------------ | ----------- | ------------ |
-|       |              |             |              |
-|       |              |             |              |
-|       |              |             |              |
-| total |              |             |              |
+### Tâche et temps
+
+| tâche   | temps estimé | temps passé | commentaires |
+| ------- | ------------ | ----------- | ------------ |
+| réponse |              |             |              |
+| score   |              |             |              |
+|         |              |             |              |
+| total   |              |             |              |
+
+&nbsp;
+
+### Explications et réflexions
+
+&nbsp;
+
+### Difficultés
+
+&nbsp;
+
+### Pour aller plus loin
+
+&nbsp;
 
 ## Semaine 7
 
-| tâche | temps estimé | temps passé | commentaires |
-| ----- | ------------ | ----------- | ------------ |
-|       |              |             |              |
-|       |              |             |              |
-|       |              |             |              |
-| total |              |             |              |
+### Tâche et temps
+
+| tâche   | temps estimé | temps passé | commentaires |
+| ------- | ------------ | ----------- | ------------ |
+| réponse |              |             |              |
+| score   |              |             |              |
+|         |              |             |              |
+| total   |              |             |              |
+
+&nbsp;
+
+### Explications et réflexions
+
+&nbsp;
+
+### Difficultés
+
+&nbsp;
+
+### Pour aller plus loin
+
+&nbsp;

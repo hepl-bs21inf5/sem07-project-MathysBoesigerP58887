@@ -1,11 +1,12 @@
 <script setup lang="ts">
-import { defineModel, defineProps, type PropType } from 'vue'
+import { ref, watch, defineModel, defineProps, type PropType } from 'vue'
 
-const model = defineModel<string | null>()
+const model = defineModel<boolean>()
 // Définition des propriétés (props) attendues par le composant
 const props = defineProps({
   id: { type: String, required: true },
   text: { type: String, required: true },
+  answer: { type: String, required: true }, //réponse à la question
   // Options disponibles pour le groupe de boutons radio
   // Chaque option est un objet contenant une valeur unique (value) et un texte descriptif (text)
   options: {
@@ -13,6 +14,16 @@ const props = defineProps({
     required: true,
   },
 })
+
+const value = ref<string | null>(null)
+
+watch(
+  value,
+  (newValue) => {
+    model.value = newValue === props.answer
+  },
+  { immediate: true }, //si on met false, ça crée une liste vide par défault
+)
 </script>
 
 <template>
@@ -21,7 +32,7 @@ const props = defineProps({
   <div v-for="option in props.options" :key="option.value" class="form-check">
     <input
       :id="`${props.id}-${option.value}`"
-      v-model="model"
+      v-model="value"
       class="form-check-input"
       type="radio"
       :name="props.id"

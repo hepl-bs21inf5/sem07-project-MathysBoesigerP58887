@@ -5,61 +5,25 @@ import QuestionCheckbox from './QuestionCheckbox.vue'
 import { computed, ref } from 'vue'
 
 // Déclaration des variables réactives qui vont contenir les réponses de l'utilisateur
-const cheval = ref<string | null>(null) // null signifie qu'il n'y a pas de réponse au départ
-const chat = ref<string | null>(null)
-const capitale = ref<string | null>(null)
-const reponse_chat = ref<string | null>(null)
 const checkedNames = ref<string[]>([])
+const correctAnswers = ref<boolean[]>([])
+const score = computed<number>(() => correctAnswers.value.filter((value) => value).length)
+const max_score = computed<number>(() => correctAnswers.value.length)
 
 // Vérifie si toutes les réponses sont remplies
-const filled = computed<boolean>(
-  () =>
-    cheval.value !== null &&
-    chat.value !== null &&
-    capitale.value !== null &&
-    reponse_chat.value !== null &&
-    checkedNames.value !== null,
-)
+const filled = computed<boolean>(() => {
+  return correctAnswers.value !== null && checkedNames.value !== null
+})
 
 //Réinitialise les réponses à null
 function reset(event: Event): void {
   event.preventDefault()
-
-  cheval.value = null
-  chat.value = null
-  capitale.value = null
-  reponse_chat.value = null
   checkedNames.value = []
 }
 
 // Fonction de soumission du formulaire qui calcule le score de l'utilisateur et affiche le score
 function submit(event: Event): void {
   event.preventDefault() // Empêche la soumission du formulaire et le rafraîchissement de la page
-
-  let score = 0
-  const max_score = 4
-
-  if (cheval.value === 'blanc') {
-    score += 1
-  }
-  if (chat.value === '4') {
-    score += 1
-  }
-  if (capitale.value === 'berne') {
-    score += 1
-  }
-  if (
-    reponse_chat.value === '4' ||
-    reponse_chat.value === 'quatre' ||
-    reponse_chat.value === 'Quatre'
-  ) {
-    score += 1
-  }
-  if (score === max_score) {
-    alert('Vous avez tout juste !')
-  } else {
-    alert(`Vous avez ${score}/4`)
-  }
 }
 </script>
 
@@ -69,8 +33,9 @@ function submit(event: Event): void {
     <!-- Quand on appuie sur "Terminer", la fonction submit est émis -->
     <QuestionRadio
       id="cheval"
-      v-model="cheval"
+      v-model="correctAnswers[0]"
       text="De quelle couleur est le cheval blanc de Napoléon ?"
+      answer="blanc"
       :options="[
         { value: 'blanc', text: 'Blanc' },
         { value: 'brun', text: 'Brun' },
@@ -78,12 +43,12 @@ function submit(event: Event): void {
         { value: 'vert', text: 'Vert' },
       ]"
     />
-  </form>
-  <form @submit="submit">
+
     <QuestionRadio
       id="chat"
-      v-model="chat"
+      v-model="correctAnswers[1]"
       text="Combien de pattes a un chat ?"
+      answer="4"
       :options="[
         { value: '6', text: '6' },
         { value: '4', text: '4' },
@@ -91,12 +56,12 @@ function submit(event: Event): void {
         { value: '2', text: '2' },
       ]"
     />
-  </form>
-  <form @submit="submit">
+
     <QuestionRadio
       id="capitale"
-      v-model="capitale"
+      v-model="correctAnswers[2]"
       text="Quelle est la capitale de la Suisse ?"
+      answer="berne"
       :options="[
         { value: 'lausanne', text: 'Lausanne' },
         { value: 'berne', text: 'Berne' },
@@ -104,11 +69,13 @@ function submit(event: Event): void {
         { value: 'bale', text: 'Bâle' },
       ]"
     />
-  </form>
-  <form @submit="submit">
-    <QuestionText id="pattes" v-model="reponse_chat" text="Combien de pattes a un chat ?" />
-  </form>
-  <form @submit="submit">
+    <QuestionText
+      id="pattes"
+      v-model="correctAnswers[3]"
+      text="Combien de pattes a un chat ?"
+      answer="4"
+    />
+
     <QuestionCheckbox
       id="question-names"
       v-model="checkedNames"
@@ -121,7 +88,9 @@ function submit(event: Event): void {
     />
     <!-- Bouton de soumission qui est désactivé tant que toutes les réponses ne sont pas remplies -->
     <button class="btn btn-primary" :class="{ disabled: !filled }" type="submit">Terminer</button>
+    <!-- Bouton pour réinitialiser les réponses -->
+    <button class="btn btn-secondary" @click="reset">Réinitialiser</button>
+    <div>Réponses correctes : {{ correctAnswers }}</div>
+    <div>Score: {{ score }} / {{ max_score }}</div>
   </form>
-  <!-- Bouton pour réinitialiser les réponses -->
-  <button class="btn btn-secondary" @click="reset">Réinitialiser</button>
 </template>

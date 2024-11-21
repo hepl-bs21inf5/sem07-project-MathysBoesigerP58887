@@ -30,17 +30,17 @@ import { RouterLink, RouterView } from 'vue-router'
       <div id="navbar" class="collapse navbar-collapse">
         <ul class="navbar-nav">
           <li class="nav-item">
+            <RouterLink class="nav-link" to="/trivia">
+              <i class="bi bi-question"></i>
+              Trivia
+            </RouterLink>
+          </li><li class="nav-item">
             <RouterLink class="nav-link" to="/about">
               <i class="bi bi-info-square"></i>
               À propos
             </RouterLink>
           </li>
-          <li class="nav-item">
-            <RouterLink class="nav-link" to="/trivia">
-              <i class="bi bi-question"></i>
-              Trivia
-            </RouterLink>
-          </li>
+
         </ul>
       </div>
     </div>
