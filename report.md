@@ -77,7 +77,7 @@ Quelle est la différence entre un prop et un modèle (v-model) ?
 
 Comment rendre la propriété placeholder optionnelle ?
 
-- je met la prop placeholder avec defineProps et lui assigne une valeur par défaut, 'Veuillez entrer un nombre'. Si placeholder est fourni par le parent, cette valeur sera utilisée ; sinon, la valeur par défaut sera appliquée. :placeholder="props.placeholder" : Dans le template, on lie placeholder dynamiquement avec :placeholder, ce qui permet d'utiliser la valeur par défaut ou une valeur fournie par le parent.
+- je met la prop placeholder avec defineProps et lui assigne une valeur par défaut, 'Veuillez entrer un nombre'. Si placeholder est fourni par le parent, cette valeur sera utilisée ; sinon, la valeur par défaut sera appliquée. :placeholder="props.placeholder" : Dans le template, on lie placeholder dynamiquement avec :placeholder, ce qui permet d'utiliser la valeur par défaut ou une valeur fournie par le parent. et si je met pas de valeur par défaut alors il n'y aura rien d'afficher dans le placeholder.
 
 &nbsp;
 
@@ -109,7 +109,7 @@ J'aimerai bien modifier les boutons des radios avec d'autres styles
 
 À quoi sert l'option immediate: true dans le watch ? Que se passe-t-il si on l'enlève ou si on met immediate: false ?
 
-- Si on met false ça nous affiche une liste vide et dès qu'on remplis une réponse, ça remplit la liste avec true ou false.
+- Si on met false ça nous affiche une liste vide et dès qu'on remplis une réponse, ça remplit la liste avec true ou false. true définit que le watch faire se faire avant le premier changement, tandis que false va attendre qu'il y ait un changement avant de l'afficher
 
 Proposer une autre manière de calculer le score et comparer les deux méthodes.
 

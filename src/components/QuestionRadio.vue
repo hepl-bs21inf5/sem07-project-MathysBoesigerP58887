@@ -28,7 +28,7 @@ watch(
 
 <template>
   {{ props.text }}
-  <!-- Génère un ID unique basé sur l'ID du composant et la valeur de l'option -->
+  <!-- ID basé sur l'ID du composant et la valeur de l'option -->
   <div v-for="option in props.options" :key="option.value" class="form-check">
     <input
       :id="`${props.id}-${option.value}`"
