@@ -3,27 +3,35 @@ import QuestionRadio from '@/components/QuestionRadio.vue'
 import QuestionText from '@/components/QuestionText.vue'
 import QuestionCheckbox from './QuestionCheckbox.vue'
 import { computed, ref } from 'vue'
+import { QuestionState } from '@/utils/models'
 
 // Déclaration des variables réactives qui vont contenir les réponses de l'utilisateur
-const checkedNames = ref<string[]>([])
-const correctAnswers = ref<boolean[]>([])
-const score = computed<number>(() => correctAnswers.value.filter((value) => value).length)
-const max_score = computed<number>(() => correctAnswers.value.length)
-
+const questionStates = ref<QuestionState[]>([])
+const score = computed<number>(
+  () => questionStates.value.filter((state) => state === QuestionState.Correct).length,
+)
+const max_score = computed<number>(() => questionStates.value.length)
 // Vérifie si toutes les réponses sont remplies
-const filled = computed<boolean>(() => {
-  return correctAnswers.value !== null && checkedNames.value !== null
-})
+const filled = computed<boolean>(() =>
+  questionStates.value.every((state) => state === QuestionState.Fill),
+)
+// Vérifie si les réponse sont juste ou fausse
+const submitted = computed<boolean>(() =>
+  questionStates.value.every(
+    (state) => state === QuestionState.Correct || state === QuestionState.Wrong,
+  ),
+)
 
-//Réinitialise les réponses à null
+//Réinitialise les réponses à Empty
 function reset(event: Event): void {
   event.preventDefault()
-  checkedNames.value = []
+  questionStates.value = questionStates.value.map(() => QuestionState.Empty)
 }
 
 // Fonction de soumission du formulaire qui calcule le score de l'utilisateur et affiche le score
 function submit(event: Event): void {
   event.preventDefault() // Empêche la soumission du formulaire et le rafraîchissement de la page
+  questionStates.value = questionStates.value.map(() => QuestionState.Submit)
 }
 </script>
 
@@ -33,7 +41,7 @@ function submit(event: Event): void {
     <!-- Quand on appuie sur "Terminer", la fonction submit est émis -->
     <QuestionRadio
       id="cheval"
-      v-model="correctAnswers[0]"
+      v-model="questionStates[0]"
       text="De quelle couleur est le cheval blanc de Napoléon ?"
       answer="blanc"
       :options="[
@@ -46,7 +54,7 @@ function submit(event: Event): void {
 
     <QuestionRadio
       id="chat"
-      v-model="correctAnswers[1]"
+      v-model="questionStates[1]"
       text="Combien de pattes a un chat ?"
       answer="4"
       :options="[
@@ -59,7 +67,7 @@ function submit(event: Event): void {
 
     <QuestionRadio
       id="capitale"
-      v-model="correctAnswers[2]"
+      v-model="questionStates[2]"
       text="Quelle est la capitale de la Suisse ?"
       answer="berne"
       :options="[
@@ -70,27 +78,28 @@ function submit(event: Event): void {
       ]"
     />
     <QuestionText
-      id="pattes"
-      v-model="correctAnswers[3]"
-      text="Combien de pattes a un chat ?"
-      answer="4"
+      id="nombre_planetes"
+      v-model="questionStates[3]"
+      text="Combien de planètes composent le système solaire ?"
+      answer="8"
     />
 
     <QuestionCheckbox
-      id="question-names"
-      v-model="checkedNames"
-      text="Qui souhaitez-vous inviter ?"
+      id="mammiferes"
+      v-model="questionStates[4]"
+      text="Le/lesquels sont des mammifères ?"
+      :answer="['ours', 'chauve_souris']"
       :options="[
-        { value: 'Jane', text: 'Jane' },
-        { value: 'John', text: 'John' },
-        { value: 'Doe', text: 'Doe' },
+        { value: 'ours', text: 'Ours' },
+        { value: 'requin', text: 'Requin' },
+        { value: 'chauve_souris', text: 'Chauve-souris' },
       ]"
     />
     <!-- Bouton de soumission qui est désactivé tant que toutes les réponses ne sont pas remplies -->
     <button class="btn btn-primary" :class="{ disabled: !filled }" type="submit">Terminer</button>
     <!-- Bouton pour réinitialiser les réponses -->
     <button class="btn btn-secondary" @click="reset">Réinitialiser</button>
-    <div>Réponses correctes : {{ correctAnswers }}</div>
-    <div>Score: {{ score }} / {{ max_score }}</div>
+    <div v-if="submitted">Score: {{ score }} / {{ max_score }}</div>
+    <div>Debug états : {{ questionStates }}</div>
   </form>
 </template>

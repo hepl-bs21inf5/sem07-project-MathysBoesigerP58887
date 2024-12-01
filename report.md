@@ -133,25 +133,42 @@ les boutons me gène mais on me dis qu'on verra ça la semaine prochaine
 
 ### Tâche et temps
 
-| tâche   | temps estimé | temps passé | commentaires |
-| ------- | ------------ | ----------- | ------------ |
-| réponse |              |             |              |
-| score   |              |             |              |
-|         |              |             |              |
-| total   |              |             |              |
+| tâche              | temps estimé | temps passé | commentaires                        |
+| ------------------ | ------------ | ----------- | ----------------------------------- |
+| états              | 30 min       | 30 min      |                                     |
+| boutons            | 30 min       | 10 min      | rapide à faire et j'ai vite compris |
+| réponses immuables | 10 min       | 5 min       | copier-coller                       |
+| total              | 1h10         | 45 min      |                                     |
 
 &nbsp;
 
 ### Explications et réflexions
 
+Comment pourrait-on réécrire la ligne suivante sans l'opérateur ternaire (avec des if et else) ?
+
+- 'if (value.value === props.answer) {
+  model.value = QuestionState.Correct;
+  } else {
+  model.value = QuestionState.Wrong;
+  }'
+
+Comment pourrait-on réécrire autrement la logique du watch sur value ?
+
+- on peut utilisé un computed: 'const model = computed(() => {
+  return value.value === null ? QuestionState.Empty : QuestionState.Fill
+  })'
+
 &nbsp;
 
 ### Difficultés
+
+Dans QuestionCheckbox, j'arrivais pas ce que l'état correct soit assigné uniquement si toute les réponses étaient toutes justes. j'ai demandé à ChatGPT et il m'a donné la réponse.
 
 &nbsp;
 
 ### Pour aller plus loin
 
+je pourait changer les watch par des computed
 &nbsp;
 
 ## Semaine 5

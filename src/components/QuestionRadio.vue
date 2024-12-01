@@ -1,7 +1,8 @@
 <script setup lang="ts">
 import { ref, watch, defineModel, defineProps, type PropType } from 'vue'
+import { QuestionState } from '@/utils/models'
 
-const model = defineModel<boolean>()
+const model = defineModel<QuestionState>()
 // Définition des propriétés (props) attendues par le composant
 const props = defineProps({
   id: { type: String, required: true },
@@ -20,10 +21,22 @@ const value = ref<string | null>(null)
 watch(
   value,
   (newValue) => {
-    model.value = newValue === props.answer
+    if (newValue === null) {
+      model.value = QuestionState.Empty
+    } else {
+      model.value = QuestionState.Fill
+    }
   },
-  { immediate: true }, //si on met false, ça crée une liste vide par défault
+  { immediate: true }, //si on met false, on attends de midifier la valeur avant de l'afficher
 )
+
+watch(model, (newModel) => {
+  if (newModel === QuestionState.Submit) {
+    model.value = value.value === props.answer ? QuestionState.Correct : QuestionState.Wrong
+  } else if (newModel === QuestionState.Empty) {
+    value.value = null
+  }
+})
 </script>
 
 <template>
@@ -37,6 +50,11 @@ watch(
       type="radio"
       :name="props.id"
       :value="option.value"
+      :disabled="
+        model === QuestionState.Submit ||
+        model === QuestionState.Correct ||
+        model === QuestionState.Wrong
+      "
     />
     <label class="form-check-label" :for="`${props.id}-${option.value}`">
       <!-- Texte à afficher à côté du bouton radio -->
