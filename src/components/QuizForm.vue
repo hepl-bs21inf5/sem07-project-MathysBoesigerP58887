@@ -83,7 +83,6 @@ function submit(event: Event): void {
       text="Combien de planètes composent le système solaire ?"
       answer="8"
     />
-
     <QuestionCheckbox
       id="mammiferes"
       v-model="questionStates[4]"

@@ -42,24 +42,22 @@ watch(model, (newModel) => {
 </script>
 
 <template>
-  <div>
-    <p>{{ props.text }}</p>
-    <div v-for="option in props.options" :key="option.value" class="form-check">
-      <input
-        :id="`${props.id}-${option.value}`"
-        v-model="value"
-        class="form-check-input"
-        type="checkbox"
-        :value="option.value"
-        :disabled="
-          model === QuestionState.Submit ||
-          model === QuestionState.Correct ||
-          model === QuestionState.Wrong
-        "
-      />
-      <label class="form-check-label" :for="`${props.id}-${option.value}`">
-        {{ option.text }}
-      </label>
-    </div>
+  <p>{{ props.text }}</p>
+  <div v-for="option in props.options" :key="option.value" class="form-check">
+    <input
+      :id="`${props.id}-${option.value}`"
+      v-model="value"
+      class="form-check-input"
+      type="checkbox"
+      :value="option.value"
+      :disabled="
+        model === QuestionState.Submit ||
+        model === QuestionState.Correct ||
+        model === QuestionState.Wrong
+      "
+    />
+    <label class="form-check-label" :for="`${props.id}-${option.value}`">
+      {{ option.text }}
+    </label>
   </div>
 </template>
