@@ -27,7 +27,7 @@ watch(
       model.value = QuestionState.Fill
     }
   },
-  { immediate: true }, //si on met false, on attends de midifier la valeur avant de l'afficher
+  { immediate: true }, //si on met false, on attends de modifier la valeur avant de l'afficher
 )
 
 watch(model, (newModel) => {

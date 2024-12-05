@@ -2,6 +2,7 @@
 import QuestionRadio from '@/components/QuestionRadio.vue'
 import QuestionText from '@/components/QuestionText.vue'
 import QuestionCheckbox from './QuestionCheckbox.vue'
+import QuestionSelect from './QuestionSelect.vue'
 import { computed, ref } from 'vue'
 import { QuestionState } from '@/utils/models'
 
@@ -92,6 +93,19 @@ function submit(event: Event): void {
         { value: 'ours', text: 'Ours' },
         { value: 'requin', text: 'Requin' },
         { value: 'chauve_souris', text: 'Chauve-souris' },
+      ]"
+    />
+
+    <QuestionSelect
+      id="1"
+      v-model="questionStates[5]"
+      text="Quel est l'élément chimique représenté par le symbole 'O' dans le tableau périodique ?"
+      answer="oxygene"
+      :options="[
+        { value: 'or', text: 'Or' },
+        { value: 'osium', text: 'Osium' },
+        { value: 'oxygene', text: 'Oxygène' },
+        { value: 'ozone', text: 'Ozone' },
       ]"
     />
     <!-- Bouton de soumission qui est désactivé tant que toutes les réponses ne sont pas remplies -->

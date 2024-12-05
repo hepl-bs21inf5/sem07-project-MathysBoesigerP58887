@@ -16,27 +16,27 @@ Mathys Boesiger
 
 ### Explications et réflexions
 
-| Expliquer le rôle des fichiers suivants: |                                                                                                                                                                                                 |
-| ---------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| main.ts                                  | C'est le fichier qui met en place l' application Vue.js en intégrant Bootstrap pour le style et les icônes, configure le routage avec Vue Router, puis monte l'application sur l'élément racine |
-| main.css                                 | C'est le fichier qui gère le style des objets du site                                                                                                                                           |
-| App.vue                                  | C'est le squelette du site avec la bar de navigation et il fait appel aux fichiers de views (HomeView.vue et AboutView.vue)                                                                     |
-| router/index.ts                          | C'est le fichier qui configure et exporte un routeur Vue pour naviguer entre la page d'accueil et la page "À propos"                                                                            |
-| AboutView.vue                            | C'est la page d'information                                                                                                                                                                     |
-| HomeView.vue                             | C'est la page 1 du quiz, elle fait appel au fichier Quizformvue                                                                                                                                 |
-| QuizForm.vue                             | C'est la qu'il y a toute les questions du quiz ainsi que le code de comptage de point                                                                                                           |
+| **Expliquer le rôle des fichiers suivants:** |                                                                                                                                                                                                 |
+| -------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| main.ts                                      | C'est le fichier qui met en place l' application Vue.js en intégrant Bootstrap pour le style et les icônes, configure le routage avec Vue Router, puis monte l'application sur l'élément racine |
+| main.css                                     | C'est le fichier qui gère le style des objets du site                                                                                                                                           |
+| App.vue                                      | C'est le squelette du site avec la bar de navigation et il fait appel aux fichiers de views (HomeView.vue et AboutView.vue)                                                                     |
+| router/index.ts                              | C'est le fichier qui configure et exporte un routeur Vue pour naviguer entre la page d'accueil et la page "À propos"                                                                            |
+| AboutView.vue                                | C'est la page d'information                                                                                                                                                                     |
+| HomeView.vue                                 | C'est la page 1 du quiz, elle fait appel au fichier Quizformvue                                                                                                                                 |
+| QuizForm.vue                                 | C'est la qu'il y a toute les questions du quiz ainsi que le code de comptage de point                                                                                                           |
 
 &nbsp;
 
-Dans le fichier QuizForm.vue :
+**Dans le fichier QuizForm.vue :**
 
-- Quelles sont les similarités et les différences entre ref et computed ?
+- **Quelles sont les similarités et les différences entre ref et computed ?**
   - Les deux sont réactifs et utilise la "value" pour accéder à leur valeur. ref est utilisé pour gérer des valeurs modifiables, tandis que computed est idéal pour gérer des valeurs dérivées qui dépendent de d'autres valeurs réactives.
-- Que se passe-t-il lorsqu'on clique sur le bouton "Terminer" ?
+- **Que se passe-t-il lorsqu'on clique sur le bouton "Terminer" ?**
   - Le bouton "Terminer" déclenche l’événement submit du formulaire auquel il est associé et déclenche une vérification des réponses, calcule le score, et affiche le résultat sous forme d'alerte sans recharger la page.
-- Qu'est-ce qu'un v-model ?
+- **Qu'est-ce qu'un v-model ?**
   - Ça lie la valeur d'un champ d'entrée, par exemple la case à cocher, à une variable du composant. Donc quand on modifie la valeur de l'élément, la variable est automatiquement mise à jour. Si la variable est modifiée dans le code, la valeur de l'élément est également mise à jour.
-- À quoi sert le :class="{ disabled: !filled }" ?
+- **À quoi sert le :class="{ disabled: !filled }" ?**
   - Quand filled est false (c’est-à-dire si tous les champs ne sont pas encore remplis), la classe disabled est ajoutée au bouton. Quand filled est true (tous les champs sont remplis), la classe disabled est retirée et le bouton devient actif.
 
 &nbsp;
@@ -67,15 +67,15 @@ Pour l'instant je n'ai pas vraiment d'idée mais j'aimerais bien ajouté une pag
 
 ### Explications et réflexions
 
-A quoi sert l'API ?
+**A quoi sert l'API ?**
 
 - Elle Récupère des données d'un serveur, ici des questions, et les ajoute comme banque de donnée à notre site afin de construire le quiz avec les questions, les différents choix de réponse et la réponse correcte.
 
-Quelle est la différence entre un prop et un modèle (v-model) ?
+**Quelle est la différence entre un prop et un modèle (v-model) ?**
 
 - Les props permettent au parent de transmettre des données à l'enfant. Le flux des données est unidirectionnel : Parent → Enfant et l'enfant ne peux pas modifié le parent. Tandis que les v-model est une liaison bidirectionnelle entre parent et enfant. Le parent transmet une valeur au composant enfant, et l'enfant peut informer le parent des changements via un événement (update:modelValue). Les deux peuvent modifier la valeur.
 
-Comment rendre la propriété placeholder optionnelle ?
+**Comment rendre la propriété placeholder optionnelle ?**
 
 - je met la prop placeholder avec defineProps et lui assigne une valeur par défaut, 'Veuillez entrer un nombre'. Si placeholder est fourni par le parent, cette valeur sera utilisée ; sinon, la valeur par défaut sera appliquée. :placeholder="props.placeholder" : Dans le template, on lie placeholder dynamiquement avec :placeholder, ce qui permet d'utiliser la valeur par défaut ou une valeur fournie par le parent. et si je met pas de valeur par défaut alors il n'y aura rien d'afficher dans le placeholder.
 
@@ -107,11 +107,11 @@ J'aimerai bien modifier les boutons des radios avec d'autres styles
 
 ### Explications et réflexions
 
-À quoi sert l'option immediate: true dans le watch ? Que se passe-t-il si on l'enlève ou si on met immediate: false ?
+**À quoi sert l'option immediate: true dans le watch ? Que se passe-t-il si on l'enlève ou si on met immediate: false ?**
 
 - Si on met false ça nous affiche une liste vide et dès qu'on remplis une réponse, ça remplit la liste avec true ou false. true définit que le watch faire se faire avant le premier changement, tandis que false va attendre qu'il y ait un changement avant de l'afficher
 
-Proposer une autre manière de calculer le score et comparer les deux méthodes.
+**Proposer une autre manière de calculer le score et comparer les deux méthodes.**
 
 - On pourrait parcourir la liste des réponses et à chaque fois fois qu'on a "true", on ajoute 1 au score. Cette méthode me parrait plus longue car à chaque fois qu'on change la valeur, on va de nouveau parcourir la liste et on devra vérifié qu'on a pas déjà ajouté la valeur.
 
@@ -144,7 +144,7 @@ les boutons me gène mais on me dis qu'on verra ça la semaine prochaine
 
 ### Explications et réflexions
 
-Comment pourrait-on réécrire la ligne suivante sans l'opérateur ternaire (avec des if et else) ?
+**Comment pourrait-on réécrire la ligne suivante sans l'opérateur ternaire (avec des if et else) ?**
 
 - 'if (value.value === props.answer) {
   model.value = QuestionState.Correct;
@@ -152,7 +152,7 @@ Comment pourrait-on réécrire la ligne suivante sans l'opérateur ternaire (ave
   model.value = QuestionState.Wrong;
   }'
 
-Comment pourrait-on réécrire autrement la logique du watch sur value ?
+**Comment pourrait-on réécrire autrement la logique du watch sur value ?**
 
 - on peut utilisé un computed: 'const model = computed(() => {
   return value.value === null ? QuestionState.Empty : QuestionState.Fill
