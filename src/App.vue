@@ -34,13 +34,13 @@ import { RouterLink, RouterView } from 'vue-router'
               <i class="bi bi-question"></i>
               Trivia
             </RouterLink>
-          </li><li class="nav-item">
+          </li>
+          <li class="nav-item">
             <RouterLink class="nav-link" to="/about">
               <i class="bi bi-info-square"></i>
               À propos
             </RouterLink>
           </li>
-
         </ul>
       </div>
     </div>
