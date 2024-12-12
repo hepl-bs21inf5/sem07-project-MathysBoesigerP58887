@@ -8,6 +8,7 @@ const props = defineProps({
   id: { type: String, required: true },
   text: { type: String, required: true },
   answer: { type: String, required: true },
+  answerDetail: { type: String, default: '' },
   options: {
     type: Array as PropType<Array<{ value: string; text: string }>>,
     required: true,
@@ -57,23 +58,18 @@ watch(model, (newModel) => {
       {{ option.text }}
     </option>
   </select>
+  <div v-if="model === QuestionState.Correct || model === QuestionState.Wrong">
+    <p v-if="model === QuestionState.Correct" class="text-success">Juste !</p>
+    <p v-else class="text-danger">Faux ! La réponse était : {{ answer }}</p>
+    <p class="blockquote-footer">{{ props.answerDetail }}</p>
+  </div>
 </template>
-<!--<select v-for="option in props.options" :key="option.value" class="custom-select">
-    <input
-      :id="`${props.id}-${option.value}`"
-      v-model="value"
-      class="form-check-input"
-      type="radio"
-      :name="props.id"
-      :value="option.value"
-      :disabled="
-        model === QuestionState.Submit ||
-        model === QuestionState.Correct ||
-        model === QuestionState.Wrong
-      "
-    />
-    <label class="form-check-label" :for="`${props.id}-${option.value}`">
 
-      {{ option.text }}
-    </label>
-  </div>-->
+<style scoped>
+.text-success {
+  color: green !important;
+}
+.text-danger {
+  color: red !important;
+}
+</style>

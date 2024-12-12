@@ -175,18 +175,24 @@ je pourait changer les watch par des computed
 
 ### Tâche et temps
 
-| tâche   | temps estimé | temps passé | commentaires |
-| ------- | ------------ | ----------- | ------------ |
-| réponse |              |             |              |
-| score   |              |             |              |
-|         |              |             |              |
-| total   |              |             |              |
+| tâche             | temps estimé | temps passé | commentaires |
+| ----------------- | ------------ | ----------- | ------------ |
+| Réponse détaillée | 15 min       | 15 min      |              |
+| Style             | 15 min       | 10 min      |              |
+| total             | 30 min       | 25 min      |              |
 
 &nbsp;
 
 ### Explications et réflexions
 
-&nbsp;
+**Ajouter un computed answerText dans QuestionRadio.vue et remplacer props.answer par answerText dans le template.Expliquer pourquoi on a fait ce changement ainsi que le code du computed.**
+
+- On recherche dans props.options une option qui correspond à la valeur de props.answer. Si une option correspondante est trouvée, elle est retournée. Le computed crée une propriété réactive. la valeur sera recalculée automatiquement si props.answer ou props.options changent.
+
+**Que se passe-t-il lorsqu'on ne met pas de valeur à answer-detail ? Est-ce satisfaisant ? Si ce n'est pas le cas, proposer une amélioration.**
+
+- la prop answerDetail a une valeur par défaut vide (default: ''), ce qui signifie que si aucune valeur n'est fournie par le parent, answerDetail sera une chaîne vide. On peut améliorer en fournissant un texte par défaut.
+  &nbsp;
 
 ### Difficultés
 

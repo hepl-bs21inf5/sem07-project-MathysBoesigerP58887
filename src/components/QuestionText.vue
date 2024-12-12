@@ -2,19 +2,19 @@
 import { ref, watch, defineModel, defineProps } from 'vue'
 import { QuestionState } from '@/utils/models'
 
+// Définir les props avec un typage clair
+const props = defineProps<{
+  id: string
+  text: string
+  answer: string | string[] // Acceptation d'une chaîne ou d'un tableau de chaînes
+  answerDetail?: string // Optionnel avec valeur par défaut
+  placeholder?: string // Optionnel avec valeur par défaut
+}>()
+
 const model = defineModel<QuestionState>()
-const props = defineProps({
-  id: { type: String, required: true },
-  text: { type: String, required: true },
-  answer: { type: String, required: true }, //réponse à la question
-  // Propriété optionnelle `placeholder` pour définir un texte par défaut dans le champ de saisie
-  placeholder: {
-    type: String,
-    default: 'Veuillez entrer un nombre', // Valeur par défaut si aucune valeur n'est fournie
-  },
-})
 const value = ref<string | null>(null)
 
+// Observer les changements de la valeur d'entrée
 watch(
   value,
   (newValue) => {
@@ -27,9 +27,14 @@ watch(
   { immediate: true },
 )
 
+// Observer les changements d'état du modèle
 watch(model, (newModel) => {
   if (newModel === QuestionState.Submit) {
-    model.value = value.value === props.answer ? QuestionState.Correct : QuestionState.Wrong
+    const possibleAnswers = Array.isArray(props.answer) ? props.answer : [props.answer]
+    const isCorrect = possibleAnswers.some(
+      (answer) => answer.toLowerCase() === (value.value || '').toLowerCase(), // Comparaison insensible à la casse
+    )
+    model.value = isCorrect ? QuestionState.Correct : QuestionState.Wrong
   } else if (newModel === QuestionState.Empty) {
     value.value = null
   }
@@ -40,15 +45,31 @@ watch(model, (newModel) => {
   {{ props.text }}
   <label for="exampleFormControlInput" class="form-label"></label>
   <input
-    id="props.id"
+    :id="props.id"
     v-model="value"
     class="form-control"
-    :placeholder="props.placeholder"
+    :placeholder="props.placeholder || 'Veuillez entrer un nombre'"
     :disabled="
       model === QuestionState.Submit ||
       model === QuestionState.Correct ||
       model === QuestionState.Wrong
     "
   />
-  <!-- Texte indicatif dans le champ, configurable via la prop placeholder -->
+  <div v-if="model === QuestionState.Correct || model === QuestionState.Wrong">
+    <p v-if="model === QuestionState.Correct" class="text-success">Juste !</p>
+    <p v-else class="text-danger">
+      Faux ! La réponse était :
+      {{ answer[0] }}
+    </p>
+    <p class="blockquote-footer">{{ props.answerDetail }}</p>
+  </div>
 </template>
+
+<style scoped>
+.text-success {
+  color: green !important;
+}
+.text-danger {
+  color: red !important;
+}
+</style>

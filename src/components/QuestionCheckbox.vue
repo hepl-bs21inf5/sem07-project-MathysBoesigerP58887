@@ -9,6 +9,7 @@ const props = defineProps({
   id: { type: String, required: true },
   text: { type: String, required: true },
   answer: { type: Array as PropType<string[]>, required: true }, // on doit initier que la réponse est une liste
+  answerDetail: { type: String, default: '' },
   options: {
     type: Array as PropType<Array<{ value: string; text: string }>>,
     required: true,
@@ -60,4 +61,18 @@ watch(model, (newModel) => {
       {{ option.text }}
     </label>
   </div>
+  <div v-if="model === QuestionState.Correct || model === QuestionState.Wrong">
+    <p v-if="model === QuestionState.Correct" class="text-success">Juste !</p>
+    <p v-else class="text-danger">Faux ! La réponse était : {{ answer[0] }} et {{ answer[1] }}</p>
+    <p class="blockquote-footer">{{ props.answerDetail }}</p>
+  </div>
 </template>
+
+<style scoped>
+.text-success {
+  color: green !important;
+}
+.text-danger {
+  color: red !important;
+}
+</style>

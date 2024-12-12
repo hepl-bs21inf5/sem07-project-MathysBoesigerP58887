@@ -45,6 +45,7 @@ function submit(event: Event): void {
       v-model="questionStates[0]"
       text="De quelle couleur est le cheval blanc de Napoléon ?"
       answer="blanc"
+      answer-detail="La réponse est dans la phrase."
       :options="[
         { value: 'blanc', text: 'Blanc' },
         { value: 'brun', text: 'Brun' },
@@ -58,6 +59,7 @@ function submit(event: Event): void {
       v-model="questionStates[1]"
       text="Combien de pattes a un chat ?"
       answer="4"
+      answer-detail="Le chat est un mammifère quadrupède."
       :options="[
         { value: '6', text: '6' },
         { value: '4', text: '4' },
@@ -71,6 +73,7 @@ function submit(event: Event): void {
       v-model="questionStates[2]"
       text="Quelle est la capitale de la Suisse ?"
       answer="berne"
+      answer-detail="La Suisse est un État fédéral d'Europe centrale avec Berne pour capitale."
       :options="[
         { value: 'lausanne', text: 'Lausanne' },
         { value: 'berne', text: 'Berne' },
@@ -82,17 +85,19 @@ function submit(event: Event): void {
       id="nombre_planetes"
       v-model="questionStates[3]"
       text="Combien de planètes composent le système solaire ?"
-      answer="8"
+      :answer="['8', 'huit']"
+      answer-detail="Mercure, Vénus, la Terre, Mars, Jupiter, Saturne, Uranus et Neptune"
     />
     <QuestionCheckbox
       id="mammiferes"
       v-model="questionStates[4]"
       text="Le/lesquels sont des mammifères ?"
-      :answer="['ours', 'chauve_souris']"
+      :answer="['ours', 'chauve-souris']"
+      answer-detail="La chauve-souris est le seul mammifère volant"
       :options="[
         { value: 'ours', text: 'Ours' },
         { value: 'requin', text: 'Requin' },
-        { value: 'chauve_souris', text: 'Chauve-souris' },
+        { value: 'chauve-souris', text: 'Chauve-souris' },
       ]"
     />
 
@@ -101,6 +106,7 @@ function submit(event: Event): void {
       v-model="questionStates[5]"
       text="Quel est l'élément chimique représenté par le symbole 'O' dans le tableau périodique ?"
       answer="oxygene"
+      answer-detail="Or: Au, Osium: Os, Ozone: O3 "
       :options="[
         { value: 'or', text: 'Or' },
         { value: 'osium', text: 'Osium' },

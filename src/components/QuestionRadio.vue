@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref, watch, defineModel, defineProps, type PropType } from 'vue'
+import { ref, watch, defineModel, computed, defineProps, type PropType } from 'vue'
 import { QuestionState } from '@/utils/models'
 
 const model = defineModel<QuestionState>()
@@ -8,6 +8,7 @@ const props = defineProps({
   id: { type: String, required: true },
   text: { type: String, required: true },
   answer: { type: String, required: true }, //réponse à la question
+  answerDetail: { type: String, default: 'Aucune explication supplémentaire disponible.' },
   // Options disponibles pour le groupe de boutons radio
   // Chaque option est un objet contenant une valeur unique (value) et un texte descriptif (text)
   options: {
@@ -15,8 +16,10 @@ const props = defineProps({
     required: true,
   },
 })
-
 const value = ref<string | null>(null)
+const answerText = computed<string>(
+  () => props.options.find((option) => option.value === props.answer)?.text ?? props.answer,
+)
 
 watch(
   value,
@@ -61,4 +64,18 @@ watch(model, (newModel) => {
       {{ option.text }}
     </label>
   </div>
+  <div v-if="model === QuestionState.Correct || model === QuestionState.Wrong">
+    <p v-if="model === QuestionState.Correct" class="text-success">Juste !</p>
+    <p v-else class="text-danger">Faux ! La réponse était : {{ answerText }}</p>
+    <p class="blockquote-footer">{{ props.answerDetail }}</p>
+  </div>
 </template>
+
+<style scoped>
+.text-success {
+  color: green !important;
+}
+.text-danger {
+  color: red !important;
+}
+</style>
