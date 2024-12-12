@@ -2,6 +2,8 @@
 /* Personnalisation des classes */
 .btn-primary {
   margin-top: 10px;
+  margin-right: 10px;
+  margin-bottom: 10px;
   --bs-btn-color: #fff;
   --bs-btn-bg: #eb9413;
   --bs-btn-border-color: #eb9413;
@@ -20,4 +22,5 @@
 
 .btn-secondary {
   margin-top: 10px;
+  margin-bottom: 10px;
 }

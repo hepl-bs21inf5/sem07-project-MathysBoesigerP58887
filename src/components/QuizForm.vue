@@ -119,6 +119,8 @@ function submit(event: Event): void {
     <!-- Bouton pour réinitialiser les réponses -->
     <button class="btn btn-secondary" @click="reset">Réinitialiser</button>
     <div v-if="submitted">Score: {{ score }} / {{ max_score }}</div>
-    <div>Debug états : {{ questionStates }}</div>
+    <div v-if="!filled" class="warning">
+      <p style="color: orange">Veuillez remplir toutes les réponses avant de soumettre.</p>
+    </div>
   </form>
 </template>

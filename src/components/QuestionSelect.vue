@@ -39,7 +39,7 @@ watch(model, (newModel) => {
 </script>
 
 <template>
-  {{ props.text }}
+  <p class="bold-text">{{ props.text }}</p>
   <!-- Menu déroulant avec select au lieu de input-->
   <select
     :id="props.id"
@@ -63,6 +63,7 @@ watch(model, (newModel) => {
     <p v-else class="text-danger">Faux ! La réponse était : {{ answer }}</p>
     <p class="blockquote-footer">{{ props.answerDetail }}</p>
   </div>
+  <p></p>
 </template>
 
 <style scoped>
@@ -71,5 +72,8 @@ watch(model, (newModel) => {
 }
 .text-danger {
   color: red !important;
+}
+.bold-text {
+  font-weight: bold;
 }
 </style>

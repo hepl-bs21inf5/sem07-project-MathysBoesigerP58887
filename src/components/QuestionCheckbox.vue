@@ -43,29 +43,32 @@ watch(model, (newModel) => {
 </script>
 
 <template>
-  <p>{{ props.text }}</p>
-  <div v-for="option in props.options" :key="option.value" class="form-check">
-    <input
-      :id="`${props.id}-${option.value}`"
-      v-model="value"
-      class="form-check-input"
-      type="checkbox"
-      :value="option.value"
-      :disabled="
-        model === QuestionState.Submit ||
-        model === QuestionState.Correct ||
-        model === QuestionState.Wrong
-      "
-    />
-    <label class="form-check-label" :for="`${props.id}-${option.value}`">
-      {{ option.text }}
-    </label>
+  <p class="bold-text">{{ props.text }}</p>
+  <div class="options-container">
+    <div v-for="option in props.options" :key="option.value" class="form-check">
+      <input
+        :id="`${props.id}-${option.value}`"
+        v-model="value"
+        class="form-check-input"
+        type="checkbox"
+        :value="option.value"
+        :disabled="
+          model === QuestionState.Submit ||
+          model === QuestionState.Correct ||
+          model === QuestionState.Wrong
+        "
+      />
+      <label class="form-check-label" :for="`${props.id}-${option.value}`">
+        {{ option.text }}
+      </label>
+    </div>
   </div>
   <div v-if="model === QuestionState.Correct || model === QuestionState.Wrong">
     <p v-if="model === QuestionState.Correct" class="text-success">Juste !</p>
     <p v-else class="text-danger">Faux ! La réponse était : {{ answer[0] }} et {{ answer[1] }}</p>
     <p class="blockquote-footer">{{ props.answerDetail }}</p>
   </div>
+  <p></p>
 </template>
 
 <style scoped>
@@ -74,5 +77,23 @@ watch(model, (newModel) => {
 }
 .text-danger {
   color: red !important;
+}
+.options-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.form-check {
+  width: 100%;
+}
+
+@media (min-width: 480px) {
+  .form-check {
+    width: 48%;
+  }
+}
+.bold-text {
+  font-weight: bold;
 }
 </style>

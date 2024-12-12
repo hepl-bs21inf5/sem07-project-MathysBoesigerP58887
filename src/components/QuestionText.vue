@@ -42,7 +42,7 @@ watch(model, (newModel) => {
 </script>
 
 <template>
-  {{ props.text }}
+  <p class="bold-text">{{ props.text }}</p>
   <label for="exampleFormControlInput" class="form-label"></label>
   <input
     :id="props.id"
@@ -63,6 +63,7 @@ watch(model, (newModel) => {
     </p>
     <p class="blockquote-footer">{{ props.answerDetail }}</p>
   </div>
+  <p></p>
 </template>
 
 <style scoped>
@@ -71,5 +72,8 @@ watch(model, (newModel) => {
 }
 .text-danger {
   color: red !important;
+}
+.bold-text {
+  font-weight: bold;
 }
 </style>

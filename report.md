@@ -1,10 +1,10 @@
-# Projet
+# <p style="color:Olive;">Projet</p>
 
 Mathys Boesiger
 
-## Semaine 1
+## <p style="color:Olive;">Semaine 1</p>
 
-### Tâche et temps
+### <p style="color:Olive;">Tâche et temps</p>
 
 | tâche              | temps estimé | temps passé | commentaires                                                                                                                |
 | ------------------ | ------------ | ----------- | --------------------------------------------------------------------------------------------------------------------------- |
@@ -14,7 +14,7 @@ Mathys Boesiger
 
 &nbsp;
 
-### Explications et réflexions
+### <p style="color:Olive;">Explications et réflexions</p>
 
 | **Expliquer le rôle des fichiers suivants:** |                                                                                                                                                                                                 |
 | -------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -41,21 +41,21 @@ Mathys Boesiger
 
 &nbsp;
 
-### Difficultés
+### <p style="color:Olive;">Difficultés</p>
 
 Ma principale difficulté a été de comprendre ce que tous les fichiers faisait. Ça m'a pris du temps mais après avoir tout lu et mis des commentaire par-ci par-là, c'est devenu plus claire.
 
 &nbsp;
 
-### Pour aller plus loin
+### <p style="color:Olive;">Pour aller plus loin</p>
 
 Pour l'instant je n'ai pas vraiment d'idée mais j'aimerais bien ajouté une page qui me permet d'ajouté des questions et les réponses directement sur le site.
 
 &nbsp;
 
-## Semaine 2
+## <p style="color:Olive;">Semaine 2</p>
 
-### Tâche et temps
+### <p style="color:Olive;">Tâche et temps</p>
 
 | tâche         | temps estimé | temps passé | commentaires                                                                        |
 | ------------- | ------------ | ----------- | ----------------------------------------------------------------------------------- |
@@ -65,7 +65,7 @@ Pour l'instant je n'ai pas vraiment d'idée mais j'aimerais bien ajouté une pag
 | Bonus         | 1h30         | 30 min      | Beaucoup plus rapide, j'ai juste repris le fichier QuestionRadio et je l'ai modifié |
 | total         | 4h           | 3h          |                                                                                     |
 
-### Explications et réflexions
+### <p style="color:Olive;">Explications et réflexions</p>
 
 **A quoi sert l'API ?**
 
@@ -81,21 +81,21 @@ Pour l'instant je n'ai pas vraiment d'idée mais j'aimerais bien ajouté une pag
 
 &nbsp;
 
-### Difficultés
+### <p style="color:Olive;">Difficultés</p>
 
 J'avais du mal à comprendre le nouveau fichier QuestionRadio.
 
 &nbsp;
 
-### Pour aller plus loin
+### <p style="color:Olive;">Pour aller plus loin</p>
 
 J'aimerai bien modifier les boutons des radios avec d'autres styles
 
 &nbsp;
 
-## Semaine 3
+## <p style="color:Olive;">Semaine 3</p>
 
-### Tâche et temps
+### <p style="color:Olive;">Tâche et temps</p>
 
 | tâche   | temps estimé | temps passé | commentaires |
 | ------- | ------------ | ----------- | ------------ |
@@ -105,7 +105,7 @@ J'aimerai bien modifier les boutons des radios avec d'autres styles
 
 &nbsp;
 
-### Explications et réflexions
+### <p style="color:Olive;">Explications et réflexions</p>
 
 **À quoi sert l'option immediate: true dans le watch ? Que se passe-t-il si on l'enlève ou si on met immediate: false ?**
 
@@ -117,21 +117,21 @@ J'aimerai bien modifier les boutons des radios avec d'autres styles
 
 &nbsp;
 
-### Difficultés
+### <p style="color:Olive;">Difficultés</p>
 
 Aucunes difficultés cette semaine. OUF
 
 &nbsp;
 
-### Pour aller plus loin
+### <p style="color:Olive;">Pour aller plus loin</p>
 
 les boutons me gène mais on me dis qu'on verra ça la semaine prochaine
 
 &nbsp;
 
-## Semaine 4
+## <p style="color:Olive;">Semaine 4</p>
 
-### Tâche et temps
+### <p style="color:Olive;">Tâche et temps</p>
 
 | tâche              | temps estimé | temps passé | commentaires                        |
 | ------------------ | ------------ | ----------- | ----------------------------------- |
@@ -142,7 +142,7 @@ les boutons me gène mais on me dis qu'on verra ça la semaine prochaine
 
 &nbsp;
 
-### Explications et réflexions
+### <p style="color:Olive;">Explications et réflexions</p>
 
 **Comment pourrait-on réécrire la ligne suivante sans l'opérateur ternaire (avec des if et else) ?**
 
@@ -160,20 +160,20 @@ les boutons me gène mais on me dis qu'on verra ça la semaine prochaine
 
 &nbsp;
 
-### Difficultés
+### <p style="color:Olive;">Difficultés</p>
 
 Dans QuestionCheckbox, j'arrivais pas ce que l'état correct soit assigné uniquement si toute les réponses étaient toutes justes. j'ai demandé à ChatGPT et il m'a donné la réponse.
 
 &nbsp;
 
-### Pour aller plus loin
+### <p style="color:Olive;">Pour aller plus loin</p>
 
 je pourait changer les watch par des computed
 &nbsp;
 
-## Semaine 5
+## <p style="color:Olive;">Semaine 5</p>
 
-### Tâche et temps
+### <p style="color:Olive;">Tâche et temps</p>
 
 | tâche             | temps estimé | temps passé | commentaires |
 | ----------------- | ------------ | ----------- | ------------ |
@@ -183,7 +183,7 @@ je pourait changer les watch par des computed
 
 &nbsp;
 
-### Explications et réflexions
+### <p style="color:Olive;">Explications et réflexions</p>
 
 **Ajouter un computed answerText dans QuestionRadio.vue et remplacer props.answer par answerText dans le template.Expliquer pourquoi on a fait ce changement ainsi que le code du computed.**
 
@@ -194,17 +194,17 @@ je pourait changer les watch par des computed
 - la prop answerDetail a une valeur par défaut vide (default: ''), ce qui signifie que si aucune valeur n'est fournie par le parent, answerDetail sera une chaîne vide. On peut améliorer en fournissant un texte par défaut.
   &nbsp;
 
-### Difficultés
+### <p style="color:Olive;">Difficultés</p>
 
 &nbsp;
 
-### Pour aller plus loin
+### <p style="color:Olive;">Pour aller plus loin</p>
 
 &nbsp;
 
-## Semaine 6
+## <p style="color:Olive;">Semaine 6</p>
 
-### Tâche et temps
+### <p style="color:Olive;">Tâche et temps</p>
 
 | tâche   | temps estimé | temps passé | commentaires |
 | ------- | ------------ | ----------- | ------------ |
@@ -215,39 +215,14 @@ je pourait changer les watch par des computed
 
 &nbsp;
 
-### Explications et réflexions
+### <p style="color:Olive;">Explications et réflexions</p>
 
 &nbsp;
 
-### Difficultés
+### <p style="color:Olive;">Difficultés</p>
 
 &nbsp;
 
-### Pour aller plus loin
-
-&nbsp;
-
-## Semaine 7
-
-### Tâche et temps
-
-| tâche   | temps estimé | temps passé | commentaires |
-| ------- | ------------ | ----------- | ------------ |
-| réponse |              |             |              |
-| score   |              |             |              |
-|         |              |             |              |
-| total   |              |             |              |
-
-&nbsp;
-
-### Explications et réflexions
-
-&nbsp;
-
-### Difficultés
-
-&nbsp;
-
-### Pour aller plus loin
+### <p style="color:Olive;">Pour aller plus loin</p>
 
 &nbsp;
