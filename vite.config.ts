@@ -6,6 +6,7 @@ import vueDevTools from 'vite-plugin-vue-devtools'
 
 // https://vite.dev/config/
 export default defineConfig({
+  base: '/sem07-project-MathysBoesigerP58887/',
   plugins: [vue(), vueDevTools()],
   resolve: {
     alias: {

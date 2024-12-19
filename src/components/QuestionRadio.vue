@@ -8,7 +8,7 @@ const props = defineProps({
   id: { type: String, required: true },
   text: { type: String, required: true },
   answer: { type: String, required: true }, //réponse à la question
-  answerDetail: { type: String, default: 'Aucune explication supplémentaire disponible.' },
+  answerDetail: { type: String, default: "Pas d'explication à la réponse" },
   // Options disponibles pour le groupe de boutons radio
   // Chaque option est un objet contenant une valeur unique (value) et un texte descriptif (text)
   options: {

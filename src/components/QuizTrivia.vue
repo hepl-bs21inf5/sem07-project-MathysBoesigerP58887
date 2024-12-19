@@ -35,7 +35,12 @@ const submitted = computed<boolean>(() =>
 
 function reset(event: Event): void {
   event.preventDefault()
-  questionStates.value = [] // Réinitialiser les états des réponses
+  questionStates.value = questionStates.value.map(() => QuestionState.Empty)
+}
+
+function new_question(event: Event): void {
+  event.preventDefault()
+  questionStates.value = questionStates.value.map(() => QuestionState.Empty) // Réinitialiser les états des réponses
 
   // Récupérer de nouvelles questions
   fetchNewQuestions()
@@ -93,7 +98,7 @@ fetchNewQuestions()
     </div>
     <button class="btn btn-primary" :class="{ disabled: !filled }" type="submit">Terminer</button>
     <button class="btn btn-secondary" @click="reset">Réinitialiser</button>
+    <button class="btn btn-secondary" @click="new_question">Nouvelles questions</button>
     <div v-if="submitted">Score: {{ score }} / {{ max_score }}</div>
-    <div>Debug états : {{ questionStates }}</div>
   </form>
 </template>

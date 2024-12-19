@@ -41,44 +41,44 @@ function submit(event: Event): void {
   <form @submit="submit">
     <!-- Quand on appuie sur "Terminer", la fonction submit est émis -->
     <QuestionRadio
-      id="cheval"
+      id="chaude"
       v-model="questionStates[0]"
-      text="De quelle couleur est le cheval blanc de Napoléon ?"
-      answer="blanc"
-      answer-detail="La réponse est dans la phrase."
+      text="Quelle est la planète la plus chaude du système solaire ?"
+      answer="venus"
+      answer-detail="Vénus est hostile et extrême ! Elle brille tellement, que nous l'appelons, à tort, l'Étoile du berger."
       :options="[
-        { value: 'blanc', text: 'Blanc' },
-        { value: 'brun', text: 'Brun' },
-        { value: 'noir', text: 'Noir' },
-        { value: 'vert', text: 'Vert' },
+        { value: 'mars', text: 'Mars' },
+        { value: 'venus', text: 'Vénus' },
+        { value: 'terre', text: 'Terre' },
+        { value: 'jupiter', text: 'Jupiter' },
       ]"
     />
 
     <QuestionRadio
-      id="chat"
+      id="anneaux"
       v-model="questionStates[1]"
-      text="Combien de pattes a un chat ?"
-      answer="4"
-      answer-detail="Le chat est un mammifère quadrupède."
+      text="Quelle planète est connue pour avoir des anneaux spectaculaires ?"
+      answer="saturne"
+      answer-detail="Les anneaux de Saturne sont les plus grands et les plus visibles du système solaire."
       :options="[
-        { value: '6', text: '6' },
-        { value: '4', text: '4' },
-        { value: '8', text: '8' },
-        { value: '2', text: '2' },
+        { value: 'uranus', text: 'Uranus' },
+        { value: 'neptune', text: 'Neptune' },
+        { value: 'saturne', text: 'Saturne' },
+        { value: 'mars', text: 'Mars' },
       ]"
     />
 
     <QuestionRadio
-      id="capitale"
+      id="rouge"
       v-model="questionStates[2]"
-      text="Quelle est la capitale de la Suisse ?"
-      answer="berne"
+      text="Quelle planète est surnommée :la planète rouge ?"
+      answer="mars"
       answer-detail="La Suisse est un État fédéral d'Europe centrale avec Berne pour capitale."
       :options="[
-        { value: 'lausanne', text: 'Lausanne' },
-        { value: 'berne', text: 'Berne' },
-        { value: 'zurich', text: 'Zürich' },
-        { value: 'bale', text: 'Bâle' },
+        { value: 'mercure', text: 'Mercure' },
+        { value: 'jupiter', text: 'Jupiter' },
+        { value: 'venus', text: 'Vénus' },
+        { value: 'mars', text: 'Mars' },
       ]"
     />
     <QuestionText
@@ -86,23 +86,25 @@ function submit(event: Event): void {
       v-model="questionStates[3]"
       text="Combien de planètes composent le système solaire ?"
       :answer="['8', 'huit']"
+      placeholder="Veuillez entrez un nombre"
       answer-detail="Mercure, Vénus, la Terre, Mars, Jupiter, Saturne, Uranus et Neptune"
     />
     <QuestionCheckbox
-      id="mammiferes"
+      id="gaz"
       v-model="questionStates[4]"
-      text="Le/lesquels sont des mammifères ?"
-      :answer="['ours', 'chauve-souris']"
+      text="Le/lesquels de ces éléments sont des gaz à l'état naturel?"
+      :answer="['azote', 'chlore']"
       answer-detail="La chauve-souris est le seul mammifère volant"
       :options="[
-        { value: 'ours', text: 'Ours' },
-        { value: 'requin', text: 'Requin' },
-        { value: 'chauve-souris', text: 'Chauve-souris' },
+        { value: 'azote', text: 'Azote' },
+        { value: 'lithium', text: 'Lithium' },
+        { value: 'magnesium', text: 'Magnésium' },
+        { value: 'chlore', text: 'Chlore' },
       ]"
     />
 
     <QuestionSelect
-      id="1"
+      id="chimie"
       v-model="questionStates[5]"
       text="Quel est l'élément chimique représenté par le symbole 'O' dans le tableau périodique ?"
       answer="oxygene"

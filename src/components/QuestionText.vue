@@ -2,7 +2,6 @@
 import { ref, watch, defineModel, defineProps } from 'vue'
 import { QuestionState } from '@/utils/models'
 
-// Définir les props avec un typage clair
 const props = defineProps<{
   id: string
   text: string
@@ -48,7 +47,7 @@ watch(model, (newModel) => {
     :id="props.id"
     v-model="value"
     class="form-control"
-    :placeholder="props.placeholder || 'Veuillez entrer un nombre'"
+    :placeholder="props.placeholder || 'Veuillez entrer du texte'"
     :disabled="
       model === QuestionState.Submit ||
       model === QuestionState.Correct ||

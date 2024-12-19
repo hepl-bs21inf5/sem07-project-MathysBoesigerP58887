@@ -32,7 +32,7 @@ watch(
 
 watch(model, (newModel) => {
   if (newModel === QuestionState.Submit) {
-    const isCorrect = // Ces 3 lignes sont faites par ChatGPT //J'aurai pu aussi trier les deux listes et les comparer
+    const isCorrect = // Ces 3 lignes sont faites par ChatGPT. J'aurai pu aussi trier les deux listes et les comparer
       props.answer.length === value.value.length &&
       props.answer.every((val) => value.value.includes(val))
     model.value = isCorrect ? QuestionState.Correct : QuestionState.Wrong

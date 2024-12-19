@@ -194,24 +194,14 @@ je pourait changer les watch par des computed
 - la prop answerDetail a une valeur par défaut vide (default: ''), ce qui signifie que si aucune valeur n'est fournie par le parent, answerDetail sera une chaîne vide. On peut améliorer en fournissant un texte par défaut.
   &nbsp;
 
-### <p style="color:Olive;">Difficultés</p>
-
-&nbsp;
-
-### <p style="color:Olive;">Pour aller plus loin</p>
-
-&nbsp;
-
 ## <p style="color:Olive;">Semaine 6</p>
 
 ### <p style="color:Olive;">Tâche et temps</p>
 
-| tâche   | temps estimé | temps passé | commentaires |
-| ------- | ------------ | ----------- | ------------ |
-| réponse |              |             |              |
-| score   |              |             |              |
-|         |              |             |              |
-| total   |              |             |              |
+| tâche       | temps estimé | temps passé | commentaires |
+| ----------- | ------------ | ----------- | ------------ |
+| Déploiement |              |             |              |
+| total       |              |             |              |
 
 &nbsp;
 
