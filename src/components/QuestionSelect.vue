@@ -54,7 +54,6 @@ watch(model, (newModel) => {
   >
     <option :value="null" disabled>Choisir votre réponse</option>
     <option v-for="option in props.options" :key="option.value" :value="option.value">
-      <!--boucle for qui crée pour chaque -->
       {{ option.text }}
     </option>
   </select>

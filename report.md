@@ -200,19 +200,27 @@ je pourait changer les watch par des computed
 
 | tâche       | temps estimé | temps passé | commentaires |
 | ----------- | ------------ | ----------- | ------------ |
-| Déploiement |              |             |              |
-| total       |              |             |              |
+| Déploiement | 10 min       | 10 min      |              |
+| total       | 10 min       | 10 min      |              |
 
 &nbsp;
 
 ### <p style="color:Olive;">Explications et réflexions</p>
 
+**Expliquer votre démarche pour les améliorations que vous avez choisies :**
+- **QuestionCheckbox.vue : Sélectionner plusieurs réponses**
+J'ai choisi de faire différents types de questions pour varier et avoir plus de choix sur comment amener la question.
+
+  - CheckBox a presque le même code que Radio, donc je me suis basé sur le code que j'avais déjà écrit pour le squelette principale. Et j'ai trouvé sur internet "https://getbootstrap.com/docs/5.0/forms/checks-radios/" comment écrire le code pour avoir plusieurs choix à cocher. Le plus compliqué était qu'il fallait que je trouve comment accèpter une réponse sous forme de liste, mais il fallait juste changer type de answer. Une fois fait, il fallait que les répoonses que donne l'utilisateur soit toutes dans la liste de réponse. Alors j'ai fait un watch qui vérifie si il y a le bon nombre de réponse et que les réponses de l'utilisateur soient dans la liste answer.
+
+- **QuestionSelect.vue : Sélectionner une réponse dans une liste déroulante**
+  - C'est la même chose que Radio, j'ai juste été sur internet pour voir comment faire le menu déroulant.https://getbootstrap.com/docs/5.0/forms/select/
+
+- **Accepter plusieurs réponses possibles pour QuestionText.vue (par exemple, "2" ou "deux")**
+
+- **Adapter le Trivia pour pouvoir y jouer**
+
 &nbsp;
 
-### <p style="color:Olive;">Difficultés</p>
-
-&nbsp;
-
-### <p style="color:Olive;">Pour aller plus loin</p>
-
-&nbsp;
+# <p style="color:Olive;">Lien du site</p>
+https://hepl-bs21inf5.github.io/sem07-project-MathysBoesigerP58887/
