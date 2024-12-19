@@ -4,7 +4,7 @@ import { ref, computed } from 'vue'
 import { QuestionState } from '@/utils/models'
 
 interface Answer {
-  /*L'interface `Answer` définit la structure d'une réponse avec deux propriétés :
+  /*L'interface Answer définit la structure d'une réponse avec deux propriétés :
   value pour la valeur de la réponse et text pour le texte associé.*/
   value: string
   text: string

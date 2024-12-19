@@ -208,19 +208,25 @@ je pourait changer les watch par des computed
 ### <p style="color:Olive;">Explications et réflexions</p>
 
 **Expliquer votre démarche pour les améliorations que vous avez choisies :**
+
 - **QuestionCheckbox.vue : Sélectionner plusieurs réponses**
-J'ai choisi de faire différents types de questions pour varier et avoir plus de choix sur comment amener la question.
+  J'ai choisi de faire différents types de questions pour varier et avoir plus de choix sur comment amener la question.
 
   - CheckBox a presque le même code que Radio, donc je me suis basé sur le code que j'avais déjà écrit pour le squelette principale. Et j'ai trouvé sur internet "https://getbootstrap.com/docs/5.0/forms/checks-radios/" comment écrire le code pour avoir plusieurs choix à cocher. Le plus compliqué était qu'il fallait que je trouve comment accèpter une réponse sous forme de liste, mais il fallait juste changer type de answer. Une fois fait, il fallait que les répoonses que donne l'utilisateur soit toutes dans la liste de réponse. Alors j'ai fait un watch qui vérifie si il y a le bon nombre de réponse et que les réponses de l'utilisateur soient dans la liste answer.
 
 - **QuestionSelect.vue : Sélectionner une réponse dans une liste déroulante**
+
   - C'est la même chose que Radio, j'ai juste été sur internet pour voir comment faire le menu déroulant.https://getbootstrap.com/docs/5.0/forms/select/
 
 - **Accepter plusieurs réponses possibles pour QuestionText.vue (par exemple, "2" ou "deux")**
 
+  - - Il fallait accepeter plusieurs réponses, en texte comme en nombre. Pour le texte, je passe tout en minuscule pour la comparaison. Donc qu'on on écrit la question, on peut mettre les deux valeurs posssible et lorsque l'utilisateur entre sa réponse, on vérifie si la réponse est dans la liste.
+
 - **Adapter le Trivia pour pouvoir y jouer**
+  - j'ai juste mis à jour avec les changements qu'on a fait sur QuestionRadio. Il a fallut que je m'aide avec ChatGPT pour créer des interface, des sorte de classe pour pouvoir définit la structure d'une question du quiz. j'ai rajouté les boutons et le système de comptage qu'on avait fait sur QuizForm ainsi qu'un bouton permettant de récupérer de nouvelles questions.
 
 &nbsp;
 
-# <p style="color:Olive;">Lien du site</p>
+# <p style="color:Red;">Lien du site</p>
+
 https://hepl-bs21inf5.github.io/sem07-project-MathysBoesigerP58887/

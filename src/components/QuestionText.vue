@@ -31,7 +31,7 @@ watch(model, (newModel) => {
   if (newModel === QuestionState.Submit) {
     const possibleAnswers = Array.isArray(props.answer) ? props.answer : [props.answer]
     const isCorrect = possibleAnswers.some(
-      (answer) => answer.toLowerCase() === (value.value || '').toLowerCase(), // Comparaison insensible à la casse
+      (answer) => answer.toLowerCase() === (value.value || '').toLowerCase(),
     )
     model.value = isCorrect ? QuestionState.Correct : QuestionState.Wrong
   } else if (newModel === QuestionState.Empty) {
