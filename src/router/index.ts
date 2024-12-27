@@ -1,12 +1,12 @@
 // Importation des modules nécessaires de vue-router
-import { createRouter, createWebHistory } from 'vue-router'
+import { createRouter, createWebHashHistory } from 'vue-router'
 // Importation du composant pour la page d'accueil
 import HomeView from '../views/HomeView.vue'
 
 // Création d'une instance du routeur avec les configurations nécessaires
 const router = createRouter({
   // Utilisation du mode d'historique HTML5 pour gérer les URL sans le "#" (hash)
-  history: createWebHistory(import.meta.env.BASE_URL),
+  history: createWebHashHistory(import.meta.env.BASE_URL),
 
   // Définition des différentes routes de l'application
   routes: [
