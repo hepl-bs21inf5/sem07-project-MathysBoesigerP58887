@@ -3,11 +3,12 @@
   <div class="container mt-3">
     <h1>À propos</h1>
     <p>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut
-      labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-      laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
-      voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
-      non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      Pendant un cours de programmation de 7 semaines, j'ai eu l'opportunité de créer un site web.
+      Ce projet m'a permis de développer mes compétences en programmation tout en travaillant sur un
+      projet concret. Le site que j'ai conçu héberge deux quiz interactifs : le premier porte sur le
+      thème de l'espace, permettant aux utilisateurs de tester leurs connaissances sur les planètes.
+      Le second quiz inclut des questions variées provenant d'internet, couvrant différents domaines
+      tels que la culture générale, les sciences, l'histoire, et bien d'autres.
     </p>
   </div>
 </template>
